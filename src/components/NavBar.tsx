@@ -30,7 +30,7 @@ export const NavBar: React.FC<NavBarProps> = ({}) => {
     );
   }
   return (
-    <Flex bgColor="tomato" p={4} ml={"auto"}>
+    <Flex bgColor="tan" p={4} ml={"auto"}>
       <Box ml={"auto"}>{body}</Box>
     </Flex>
   );
