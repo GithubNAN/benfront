@@ -17,9 +17,9 @@ const Register: React.FC<registerProps> = ({}) => {
   return (
     <Wrapper variant="small">
       <Formik
-        initialValues={{ username: "", password: "" }}
+        initialValues={{ email: "", username: "", password: "" }}
         onSubmit={async (values, { setErrors }) => {
-          const res = await register(values);
+          const res = await register({ options: values });
           if (res.data?.register.errors) {
             setErrors(toErrorMap(res.data.register.errors));
           } else if (res.data?.register.user) {
@@ -40,6 +40,13 @@ const Register: React.FC<registerProps> = ({}) => {
                 label="Password"
                 placeholder="enter your password here"
                 type="password"
+              />
+            </Box>
+            <Box mt={4}>
+              <InputField
+                name="email"
+                label="Email"
+                placeholder="enter your email here"
               />
             </Box>
             <Button
